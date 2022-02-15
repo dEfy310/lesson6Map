@@ -5,16 +5,12 @@ import java.util.Objects;
 public class Employee {
     private String firstName;
     private String lastName;
-    private Integer id;
 
     public Employee(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
 
-    public Integer getId() {
-        return id;
-    }
 
     public String getFirstName() {
         return firstName;
@@ -24,12 +20,12 @@ public class Employee {
         return lastName;
     }
 
+
     @Override
     public String toString() {
         return "Employee{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", id=" + id +
                 '}';
     }
 
@@ -38,11 +34,11 @@ public class Employee {
         if (this == o) return true;
         if (!(o instanceof Employee)) return false;
         Employee employee = (Employee) o;
-        return Objects.equals(getFirstName(), employee.getFirstName()) && Objects.equals(getLastName(), employee.getLastName()) && Objects.equals(getId(), employee.getId());
+        return Objects.equals(getFirstName(), employee.getFirstName()) && Objects.equals(getLastName(), employee.getLastName());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getFirstName(), getLastName(), getId());
+        return Objects.hash(getFirstName(), getLastName());
     }
 }

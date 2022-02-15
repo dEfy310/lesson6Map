@@ -17,23 +17,23 @@ public class EmployeeController {
         this.employeeServiceImpl = employeeServiceImpl;
     }
 
-    @GetMapping(path = "/add")
-    public Employee addEmployee(@RequestParam() String firstName, @RequestParam() String lastName, @RequestParam Integer id) {
-        return employeeServiceImpl.addEmployee(firstName, lastName, id);
+    @GetMapping("/add")
+    public Employee addEmployee(@RequestParam String firstName, @RequestParam String lastName) {
+        return employeeServiceImpl.addEmployee(firstName, lastName);
     }
 
-    @GetMapping(path = "/remove")
-    public Employee removeEmployee(@RequestParam() String firstName, @RequestParam() String lastName, @RequestParam Integer id) {
-        return employeeServiceImpl.removeEmployee(firstName, lastName, id);
+    @GetMapping("/remove")
+    public boolean removeEmployee(@RequestParam String firstName, @RequestParam String lastName) {
+        return employeeServiceImpl.removeEmployee(firstName, lastName);
     }
 
-    @GetMapping(path = "/find-by-key")
-    public Employee findEmployeeByKey(@RequestParam() Integer id, @RequestParam() String firstName, @RequestParam() String lastName) {
-        return employeeServiceImpl.getEmployeeByKey(id, firstName, lastName);
+    @GetMapping("/find-by-key")
+    public Employee findEmployeeByKey(@RequestParam String firstName, @RequestParam String lastName) {
+        return employeeServiceImpl.getEmployeeByKey(firstName, lastName);
     }
 
-    @GetMapping(path = "/find-by-value")
-    public Employee findEmployeeByValue(@RequestParam() String firstName, @RequestParam() String lastName) {
+    @GetMapping("/find-by-value")
+    public Employee findEmployeeByValue(@RequestParam String firstName, @RequestParam String lastName) {
         return employeeServiceImpl.getEmployeeByValue(firstName, lastName);
     }
 
