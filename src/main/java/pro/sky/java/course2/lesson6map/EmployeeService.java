@@ -9,7 +9,5 @@ public interface EmployeeService {
 
     Employee getEmployeeByKey(String firstName, String lastName);
 
-    Employee getEmployeeByValue(String firstName, String lastName);
-
-    Set<Employee> getEmployeeMap();
+    Set<Employee> getEmployees();
 }

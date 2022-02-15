@@ -47,17 +47,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public Employee getEmployeeByValue(String firstName, String lastName) {
-        Employee employee = new Employee(firstName, lastName);
-        if (employeeMap.containsValue(employee)) {
-            return employee;
-        } else {
-            throw new NotFoundEmployeeException();
-        }
-    }
-
-    @Override
-    public Set<Employee> getEmployeeMap() {
+    public Set<Employee> getEmployees() {
         return new HashSet<>(employeeMap.values());
     }
 }

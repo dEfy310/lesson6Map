@@ -32,14 +32,9 @@ public class EmployeeController {
         return employeeServiceImpl.getEmployeeByKey(firstName, lastName);
     }
 
-    @GetMapping("/find-by-value")
-    public Employee findEmployeeByValue(@RequestParam String firstName, @RequestParam String lastName) {
-        return employeeServiceImpl.getEmployeeByValue(firstName, lastName);
-    }
-
     @GetMapping
     public Set<Employee> getEmployeeList() {
-        return employeeServiceImpl.getEmployeeMap();
+        return employeeServiceImpl.getEmployees();
 
     }
 }
