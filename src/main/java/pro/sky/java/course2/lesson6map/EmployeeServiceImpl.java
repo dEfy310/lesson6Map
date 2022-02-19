@@ -29,16 +29,17 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public boolean removeEmployee(String firstName, String lastName) {
+    public Employee removeEmployee(String firstName, String lastName) {
         String k = (firstName + " " + lastName);
         if (employeeMap.containsKey(k)) {
-            return employeeMap.remove(k, createEmployee(firstName, lastName));
+            employeeMap.remove(k, createEmployee(firstName, lastName));
+            return createEmployee(firstName, lastName);
         }
         throw new NotFoundEmployeeException();
     }
 
     @Override
-    public Employee getEmployeeByKey(String firstName, String lastName) {
+    public Employee getEmployee(String firstName, String lastName) {
         String k = (firstName + " " + lastName);
         if (employeeMap.containsKey(k)) {
             return employeeMap.get(k);

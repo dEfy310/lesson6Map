@@ -23,13 +23,13 @@ public class EmployeeController {
     }
 
     @GetMapping("/remove")
-    public boolean removeEmployee(@RequestParam String firstName, @RequestParam String lastName) {
+    public Employee removeEmployee(@RequestParam String firstName, @RequestParam String lastName) {
         return employeeServiceImpl.removeEmployee(firstName, lastName);
     }
 
-    @GetMapping("/find-by-key")
-    public Employee findEmployeeByKey(@RequestParam String firstName, @RequestParam String lastName) {
-        return employeeServiceImpl.getEmployeeByKey(firstName, lastName);
+    @GetMapping("/find")
+    public Employee findEmployee(@RequestParam String firstName, @RequestParam String lastName) {
+        return employeeServiceImpl.getEmployee(firstName, lastName);
     }
 
     @GetMapping
